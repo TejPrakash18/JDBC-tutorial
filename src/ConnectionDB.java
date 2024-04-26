@@ -15,7 +15,7 @@ public class ConnectionDB {
             Class.forName("org.postgresql.Driver");
             // Establishing the connection
             Connection connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Connected to the PostGreSQL server successfully.");
             // Don't forget to close the connection when done
             connection.close();
         } catch (ClassNotFoundException | SQLException e) {
@@ -24,3 +24,4 @@ public class ConnectionDB {
         }
     }
 }
+
