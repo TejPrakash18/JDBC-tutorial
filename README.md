@@ -59,7 +59,7 @@ System.out.println(name);
 
 solve this problems using postgreSql in java
 
-1.  ` How to create a table `
+1.  `How to create a table `
 2. `insert data into a table using "preparedStatement" in java `
 3. `insert data into table with dynamic input`
 4. `insert image to DB and large image `
