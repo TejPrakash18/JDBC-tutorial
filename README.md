@@ -1,8 +1,9 @@
 ## JDBC (java Database connectivity)
 JDBC stand for java database connectivity, it is a standard API provide by oracle
-for java 
+for java application to interact with different set of databases.
 
-application to interact with different set of databases.
+The JDBC driver is a collection of predefined java classes enabling the communication
+based on a defined database. 
 
 ` Java App --------> { JDBC } --------> DataBase`
 
@@ -56,6 +57,63 @@ System.out.println(name);
    con.close();
 
 ----------
+### statement
+
+the statement interface defines a generalized construct to run different SQL statement. it
+shows the resultant dataset implementing the resultSet object.
+
+```java
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Collection;
+
+Collection conn = DriverManager.getConnection(dbrl,username, psswrd);
+Statement stmt = conn.createStatement();
+
+```
+the statement can be executed for the retrieval of the dataset based on resulSet.
+
+```Java
+import java.sql.ResultSet;
+
+ResultSet res = stmt.executeQuery("select * from EMP");
+while(res.next()){
+    System.out.println(res.getString("E_id"));
+    System.out.println(res.getString("E_name"));
+        }
+
+```
+------
+
+### preparedStatement
+
+PreparedStatement remains under the statement as a sub interface hierarchically. preparedStatement is comparably faster than the statement interface
+preparedStatement object  is retrieved from the object of connection using the function
+
+```java
+import java.sql.PreparedStatement;
+
+PreparedStatement psmt = conn.prepareStatement("insert into EMP values('1010', 1)");
+psmt.executeUpdate();
+```
+---------------
+
+### ResultSet
+
+The resultSet interface provide a data set in the form of a table.it is given as the output of the resultSet data by implementing a SQL statement within JDBC program. it 
+defines an iterative process based on the "res.next()" method returning false if the EOF(end of file maker) is reached.
+
+```java
+import java.sql.ResultSet;
+
+ResultSet res = stmt.executeQuery("Select E_id, E_name, E_sal, E_Dept from EMP");
+while(res.next()){
+    System.out.println(res.getString("E_name"));
+        }
+```
+
+
+
 
 solve this problems using postgreSql in java
 
