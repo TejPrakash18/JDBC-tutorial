@@ -10,7 +10,7 @@ public class CreateTable {
         String password = "1234";
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Connected to the PostgresSQL server successfully.");
 
             String sql = "CREATE TABLE users " +
                     "(id SERIAL PRIMARY KEY, " +

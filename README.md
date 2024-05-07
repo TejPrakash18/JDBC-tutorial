@@ -112,7 +112,20 @@ while(res.next()){
         }
 ```
 
+```java
 
+        Short notes
+    step 1: import the different package 
+        defining the driver name and jdbc and defined the dburl
+        database initialisation
+    step 2: Registeration of the JDBC driver
+        Class.forName("driver url");
+    step 3: commence a connection
+    step 4: Generate a statement
+    step 5: run a query
+    step 6: Take out required data based on the result set
+    step 7: data cleaning;
+```
 
 
 solve this problems using postgreSql in java
