@@ -9,10 +9,11 @@ public class ConnectionDB {
         // Database credentials
         String user = "postgres";
         String password = "1234";
+        String jdbcDriver = "org.postgresql.Driver";
 
         try {
             // Registering the PostgreSQL JDBC driver
-            Class.forName("org.postgresql.Driver");
+            Class.forName(jdbcDriver);
             // Establishing the connection
             Connection connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the PostGreSQL server successfully.");
