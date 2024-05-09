@@ -46,7 +46,7 @@ public class CRUDOperation {
                     String updatedItem = scanner.nextLine();
                     items.set(updateIndex, updatedItem);
                     writeItemsToFile(items);
-                    System.out.println("Delete successfully item....");
+                    System.out.println("Update successfully item....");
                     break;
                 case 4:
                     System.out.println("Enter item number to delete:");

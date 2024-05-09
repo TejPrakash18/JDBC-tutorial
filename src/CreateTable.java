@@ -5,7 +5,7 @@ import java.sql.Statement;
 
 public class CreateTable {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/TestDb";
+        String url = "jdbc:postgresql://localhost:5432/DemoDB";
         String username = "postgres";
         String password = "1234";
 

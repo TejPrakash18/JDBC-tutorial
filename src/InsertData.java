@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class InsertData {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/TestDb";
+        String url = "jdbc:postgresql://localhost:5432/DemoDB";
         String username = "postgres";
         String password = "1234";
         String tableName = "users";
