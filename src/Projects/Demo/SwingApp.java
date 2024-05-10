@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SwingApp {
+public class SwingApp{
     SwingApp(){
         JFrame f = new JFrame();
 
         JLabel heading = new JLabel("Print Data on console....");
         heading.setBounds(70, 20, 180, 30);
+        f.add(heading);
         JLabel firstName = new JLabel("First Name");
         firstName.setBounds(20, 50, 80, 20);
 
@@ -55,7 +56,7 @@ public class SwingApp {
             }
         });
 
-        f.add(heading);
+//        f.add(heading);
         f.add(firstName);
         f.add(lastName);
         f.add(dob);
