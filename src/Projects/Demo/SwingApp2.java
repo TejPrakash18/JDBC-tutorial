@@ -1,13 +1,10 @@
 package Projects.Demo;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 
 public class SwingApp2 {
     private SwingApp2(){
@@ -15,7 +12,10 @@ public class SwingApp2 {
         JFrame jFrame = new JFrame("Swing App");
 
 
-
+//        String imageUrl = "logo.png";
+        JLabel image = new JLabel();
+        image.setIcon(new ImageIcon(SwingApp2.class.getResource("../CRUD/logo.png")));
+        image.setBounds(60, 70, 580, 690);
 
 
 
@@ -30,25 +30,34 @@ public class SwingApp2 {
         JButton btn  = new JButton("Click Me");
         btn.addActionListener(e -> {
             String name1 = input.getText();
-            if("kya".equals(name1)){
+            if("kon".equals(name1)){
                 System.out.println("Hey I'm swing");
             }
-
-
         });
         btn.setBounds(30, 50, 80, 20);
 
         JTextArea message = new JTextArea(5, 20);
         message.setBounds(50, 70, 120, 50);
 
+        JButton btn1 = new JButton("MouseListener");
+        btn1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                System.out.println("Mouse clicked");
+            }
+        });
+        btn1.setBounds(170, 110, 170, 30);
 
+        jFrame.add(image);
         jFrame.add(name);
         jFrame.add(input);
         jFrame.add(btn);
         jFrame.add(message);
+        jFrame.add(btn1);
 
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        jFrame.setSize(500,600);
+        jFrame.setSize(700,650);
         jFrame.setLayout(null);
         jFrame.setVisible(true);
     }
