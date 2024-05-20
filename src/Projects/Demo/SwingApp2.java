@@ -33,7 +33,7 @@ public class SwingApp2 {
             if("kon".equals(name1)){
                 System.out.println("Hey I'm swing");
             }
-        });
+            });
         btn.setBounds(30, 50, 80, 20);
 
         JTextArea message = new JTextArea(5, 20);
