@@ -1,9 +1,11 @@
-import java.sql.*;
-import java.util.Scanner;
+package JDBC;
 
-public class DynamicInputInsertData {
+import java.sql.*;
+
+
+public class InsertData {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/TestDb";
+        String url = "jdbc:postgresql://localhost:5432/DemoDB";
         String username = "postgres";
         String password = "1234";
         String tableName = "users";
@@ -20,12 +22,7 @@ public class DynamicInputInsertData {
             }
 
             // Insert data into the table
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter name: ");
-            String name = scanner.nextLine();
-            System.out.print("Enter age: ");
-            int age = scanner.nextInt();
-            insertData(connection, tableName, name, age);
+            insertData(connection, tableName, "John Doe", 30);
             System.out.println("Data inserted successfully.");
         } catch (SQLException e) {
             System.out.println("Connection failure.");

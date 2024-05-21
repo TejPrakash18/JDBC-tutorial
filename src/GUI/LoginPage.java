@@ -107,7 +107,7 @@ public class LoginPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String password = passwordField.getText();
-                if (password.equals("gungun")) {
+                if (password.equals("tej07")) {
                     new Register();
                     loginFrame.dispose();
                     System.out.println("Welcome");
