@@ -48,6 +48,8 @@ class Register {
                 System.out.println(lastName);
                 System.out.println(dob);
                 System.out.println(email);
+                new LoginPage();
+                registerFrame.dispose();
             }
         });
 
@@ -108,8 +110,6 @@ public class LoginPage {
             public void actionPerformed(ActionEvent e) {
                 String password = passwordField.getText();
                 if (password.equals("tej07")) {
-                    new Register();
-                    loginFrame.dispose();
                     System.out.println("Welcome");
                 } else {
                     System.out.println("Failed");
@@ -142,6 +142,6 @@ public class LoginPage {
     }
 
     public static void main(String[] args) {
-        new LoginPage();
+        new Register();
     }
 }
