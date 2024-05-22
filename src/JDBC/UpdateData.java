@@ -17,8 +17,8 @@ public class UpdateData {
 
             // Update data in the table
             int idToUpdate = 3; // The ID of the row to update
-            String newName = "Akku"; // The new name value
-            int newAge = 23; // The new age value
+            String newName = "Neha"; // The new name value
+            int newAge = 21; // The new age value
 
             String sql = "UPDATE users SET name = ?, age = ? WHERE id = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
