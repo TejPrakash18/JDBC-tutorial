@@ -4,9 +4,55 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+class ProfilePage {
+    ProfilePage() {
+        JFrame profilePage = new JFrame("Profile Page");
+        ImageIcon appIcon = new ImageIcon("thenotchers.png");
+        profilePage.setIconImage(appIcon.getImage());
+
+        ImageIcon icon = new ImageIcon("thenotchers.png");
+        JLabel label = new JLabel(icon);
+        label.setBounds(60, 230, 380, 390);
+
+        JLabel name = new JLabel("Name:");
+        name.setBounds(120, 50, 80, 30);
+
+        JLabel email = new JLabel("E-mail:");
+        email.setBounds(120, 70, 80, 30);
+
+        JButton title = new JButton("Title Text");
+        title.setBounds(100, 120, 300, 50);
+
+        JButton title1 = new JButton("Title Text");
+        title1.setBounds(100, 190, 300, 50);
+
+        JButton add = new JButton("+");
+        add.setBounds(200, 650, 50, 30);
+        add.addActionListener(e -> {
+            // Action to be performed when "+" button is clicked
+        });
+
+        profilePage.add(name);
+        profilePage.add(email);
+        profilePage.add(label);
+        profilePage.add(add);
+        profilePage.add(title);
+        profilePage.add(title1);
+
+        profilePage.setSize(500, 800); // Adjusted size to fit all components
+        profilePage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        profilePage.setLayout(null);
+        profilePage.setVisible(true);
+    }
+}
+
 class Register {
     public Register() {
+
         JFrame registerFrame = new JFrame("Home Page");
+
+        ImageIcon appIcon = new ImageIcon("thenotchers.png");
+        registerFrame.setIconImage(appIcon.getImage());
 
         JLabel heading = new JLabel("Print data on console...");
         heading.setBounds(70, 20, 180, 40);
@@ -77,7 +123,7 @@ class Register {
         registerFrame.add(submitButton);
         registerFrame.add(resetButton);
 
-        registerFrame.setSize(300, 300);
+        registerFrame.setSize(500, 400);
         registerFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         registerFrame.setLayout(null);
         registerFrame.setVisible(true);
@@ -87,6 +133,8 @@ class Register {
 public class LoginPage {
     public LoginPage() {
         JFrame loginFrame = new JFrame("Login Page");
+        ImageIcon appIcon = new ImageIcon("thenotchers.png");
+        loginFrame.setIconImage(appIcon.getImage());
 
         JLabel heading = new JLabel("Login");
         heading.setBounds(70, 20, 180, 30);
@@ -100,7 +148,7 @@ public class LoginPage {
         JLabel passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(20, 80, 80, 20);
 
-        JTextField passwordField = new JTextField();
+        JPasswordField passwordField = new JPasswordField();
         passwordField.setBounds(120, 80, 100, 20);
 
         JButton loginButton = new JButton("Login");
@@ -108,9 +156,11 @@ public class LoginPage {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String password = passwordField.getText();
+                String password = new String(passwordField.getPassword());
                 if (password.equals("tej07")) {
                     System.out.println("Welcome");
+                    new ProfilePage();
+                    loginFrame.dispose();
                 } else {
                     System.out.println("Failed");
                 }
@@ -135,13 +185,14 @@ public class LoginPage {
         loginFrame.add(loginButton);
         loginFrame.add(resetButton);
 
-        loginFrame.setSize(300, 300);
+        loginFrame.setSize(500, 400);
         loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         loginFrame.setLayout(null);
         loginFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
+
         new Register();
     }
 }
