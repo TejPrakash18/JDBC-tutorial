@@ -48,7 +48,7 @@ class LoginPage {
 
                     if (resultSet.next()) {
                         System.out.println("Welcome");
-//                        new
+                        new Welcome();
                         loginFrame.dispose();
 
                     } else {

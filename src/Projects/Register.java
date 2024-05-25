@@ -75,6 +75,7 @@ class Register {
             @Override
             public void actionPerformed(ActionEvent e) {
                new LoginPage();
+               registerFrame.dispose();
             }
         });
 
