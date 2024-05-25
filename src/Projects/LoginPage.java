@@ -48,7 +48,9 @@ class LoginPage {
 
                     if (resultSet.next()) {
                         System.out.println("Welcome");
+//                        new
                         loginFrame.dispose();
+
                     } else {
                         System.out.println("Invalid credentials");
                     }
